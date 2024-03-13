@@ -1,0 +1,5 @@
+# Ignore files in the 'data' directory
+data/
+
+# Ignore cache files
+.cache
