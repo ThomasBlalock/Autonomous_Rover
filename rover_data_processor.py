@@ -9,8 +9,8 @@ import os
 from imutils.video import FPS
 
 #set source and destination paths
-SOURCE_PATH = '/media/usafa/data/rover_data'
-DEST_PATH = '/media/usafa/data/rover_data_processed'
+SOURCE_PATH = '/home/usafa/usafa_472/rover_lab_01/data/unprocessed/'
+DEST_PATH = '/home/usafa/usafa_472/rover_lab_01/data/processed/'
 #define the range of white you want
 white_L = 220
 white_H = 255
@@ -44,9 +44,10 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
     try:
         i = 0
         print(f"Processing {source_file}...")
-        # path to file should look something like this: /media/usafa/drone_data/20210122-120614.bag
+        # EX: .../20210122-120614.bag
         path = source_file
 
+        # EX: .../20210122-120614
         file_name = os.path.basename(path.replace(".bag", ""))
         #set destination
         if dest_folder is None:
@@ -61,12 +62,14 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
                 return
 
         # Make subfolder to hold all training data
+            # File: '.../20210122-120614' now exists
         os.makedirs(dest_path, exist_ok=True)
 
         # Load data associated with the video.
+        # frm_lookup is [{'index', 'throttle', 'steering', 'heading'} ...]
         frm_lookup = load_telem_file(path.replace(".bag", ".csv"))
 
-    #set up stream from bag
+        #set up stream from bag
         config = rs.config()
 
         rs.config.enable_device_from_file(config, path, False)
@@ -98,6 +101,8 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
                 aligned_frames = alignedFs.process(frames)
 
                 color_frame = aligned_frames.get_color_frame()
+
+                # Match frame/image to control data--------------------------
 
                 # Get related throttle and steering for frame
                 frm_num = color_frame.frame_number
