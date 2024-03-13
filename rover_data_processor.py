@@ -175,7 +175,7 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
                     pipeline.stop()
                     time.sleep(0.5)
     except Exception as e:
-        print("Unexpected error during cleanup.", exc_info=True)
+        print("Unexpected error during cleanup.")#, exc_info=True)
 
 #finishing messages
     print(f"Finished processing frames for {source_file}.")

@@ -16,12 +16,15 @@ import rosbag
 import csv
 import random
 
+DATA_FILEPATH = '/home/usafa/usafa_472/rover_lab_01/data/unprocessed/'
+DATA_FILEPATH += '' #'smooth_track/'
+
 #initialize camera settings and turn on camera
 def initialize_pipeline(run):
     pipeline = rs.pipeline()
     config = rs.config()
     #record video to bag file
-    config.enable_record_to_file(f'/home/usafa/usafa_472/rover_lab_01/data/{run}.bag')
+    config.enable_record_to_file(f'{DATA_FILEPATH}{run}.bag')
     config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
     pipeline.start(config)
     return pipeline
@@ -47,7 +50,7 @@ def get_video_data(pipeline):
     color_image_fn = color_frame.get_frame_number()
     cv2.imshow('color', color_image) #display image
 
-    return color_image_fn, color_image
+    return color_image_fn
 
 #in future collect relavent data form the rover, right now return random ints for each field
 def get_rover_data():
@@ -67,14 +70,14 @@ def main():
     #get starting timestamp for file naming
     run = datetime.datetime.now()
     #create bag file
-    bag = rosbag.Bag(f'/home/usafa/usafa_472/rover_lab_01/data/{run}.bag', 'w')
+    bag = rosbag.Bag(f'{DATA_FILEPATH}{run}.csv', 'w')
     #create csv and add headers
     header = ['index', 'throttle', 'steering', 'heading']
-    with open(f'/home/usafa/usafa_472/rover_lab_01/data/{run}.bag', 'w') as f:
+    with open(f'{DATA_FILEPATH}{run}.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(header)
     #reopen csv for the remainder of the run
-    data_file = open(f'/home/usafa/usafa_472/rover_lab_01/data/{run}.csv', 'a')
+    data_file = open(f'{DATA_FILEPATH}{run}.csv', 'a')
 
     pipeline = initialize_pipeline(run)
 
@@ -83,6 +86,7 @@ def main():
         # Image dimentions = [480, 640, 3]
         index = get_video_data(pipeline)
         if index == None:
+            # skip the rest of the loop if no frame is available
             continue
 
         #get data from rover: throttle, steering, heading
