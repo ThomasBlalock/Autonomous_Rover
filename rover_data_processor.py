@@ -9,8 +9,8 @@ import os
 from imutils.video import FPS
 
 #set source and destination paths
-SOURCE_PATH = '/home/usafa/usafa_472/rover_lab_01/data/unprocessed/'
-DEST_PATH = '/home/usafa/usafa_472/rover_lab_01/data/processed/'
+SOURCE_PATH = '/media/usafa/data/rover_data/unprocessed' + '/test/'
+DEST_PATH = '/media/usafa/data/rover_data/processed' + '/test/'
 #define the range of white you want
 white_L = 220
 white_H = 255
@@ -90,7 +90,7 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
         alignedFs = rs.align(align_to)
         fps = FPS().start()
         #loop until all frames are done
-        while playback.current_status() == rs.playback_status.playing:
+        while playback.current_status() == rs.playback_status.playing: #TODO: While armed
             try:
                 frames = pipeline.wait_for_frames(timeout_ms=5000)
                 if not frames:
@@ -167,7 +167,7 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
         # stop recording
         if fps is not None:
             fps.stop()
-        time.sleep(0.5)
+        time.sleep(3) #TODO: He did 10 seconds
         if playback is not None:
             if playback.current_status() == rs.playback_status.playing:
                 playback.pause()

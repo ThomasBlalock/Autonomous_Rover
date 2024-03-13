@@ -15,9 +15,10 @@ import datetime
 import rosbag
 import csv
 import random
+import time
 
-DATA_FILEPATH = '/home/usafa/usafa_472/rover_lab_01/data/unprocessed/'
-DATA_FILEPATH += '' #'smooth_track/'
+DATA_FILEPATH = '/media/usafa/data/rover_data/unprocessed'
+DATA_FILEPATH += '/test/'
 
 #initialize camera settings and turn on camera
 def initialize_pipeline(run):
@@ -53,10 +54,14 @@ def get_video_data(pipeline):
     return color_image_fn
 
 #in future collect relavent data form the rover, right now return random ints for each field
-def get_rover_data():
-    throttle = random.randint(0, 2000)
-    steering = random.randint(0, 2000)
-    heading = random.randint(0, 359)
+def get_rover_data(rover):
+    if (rover.channels['3'] is not None and
+        rover.channels['1'] is not None):
+        throttle = int(rover.channels['3'])
+        steering = int(rover.channels['1'])
+    else:
+        return None
+    heading = rover.heading
 
     return [throttle, steering, heading]
 
@@ -65,6 +70,30 @@ def append_data(data, index, data_file):
     field_names = ['index', 'throttle', 'steering', 'heading']
     data_dict = {'index': index, 'throttle': data[0], 'steering': data[1], 'heading': data[2]}
     csv.DictWriter(data_file,  fieldnames=field_names).writerow(data_dict)
+
+def device_channel_msg(device):
+    @device.on_message('RC_CHANNELS')
+    def RC_CHANNEL_listener(vehicle, name, message):
+        set_rc(vehicle, 1, message.chan1_raw)
+        set_rc(vehicle, 2, message.chan2_raw)
+        set_rc(vehicle, 3, message.chan3_raw)
+        set_rc(vehicle, 4, message.chan4_raw)
+        set_rc(vehicle, 5, message.chan5_raw)
+        set_rc(vehicle, 6, message.chan6_raw)
+        set_rc(vehicle, 7, message.chan7_raw)
+        set_rc(vehicle, 8, message.chan8_raw)
+        set_rc(vehicle, 9, message.chan9_raw)
+        set_rc(vehicle, 10, message.chan10_raw)
+        set_rc(vehicle, 11, message.chan11_raw)
+        set_rc(vehicle, 12, message.chan12_raw)
+        set_rc(vehicle, 13, message.chan13_raw)
+        set_rc(vehicle, 14, message.chan14_raw)
+        set_rc(vehicle, 15, message.chan15_raw)
+        set_rc(vehicle, 16, message.chan16_raw)
+        vehicle.notify_attribute_listeners('channels', vehicle.channels)
+    
+def set_rc(vehicle, chnum, v):
+    vehicle._channels._update_channel(str(chnum), v)
 
 def main():
     #get starting timestamp for file naming
@@ -80,8 +109,15 @@ def main():
     data_file = open(f'{DATA_FILEPATH}{run}.csv', 'a')
 
     pipeline = initialize_pipeline(run)
+    rover = connect('/dev/ttyACM0', wait_ready=True, baud=57600)
+    device_channel_msg(rover)
 
-    while True:
+    print("Waiting for rover to be armed...")
+    while not rover.armed:
+        time.sleep(1)
+    print("Rover armed.")
+
+    while rover.armed:
         #get index of current frame
         # Image dimentions = [480, 640, 3]
         index = get_video_data(pipeline)
@@ -90,9 +126,12 @@ def main():
             continue
 
         #get data from rover: throttle, steering, heading
-        cntrl_data = get_rover_data()
+        cntrl_data = get_rover_data(rover)
+        if cntrl_data is None:
+            continue
         #add data to csv with current frame index
         append_data(cntrl_data, index, data_file)
+
 
 #exit condition
         key = cv2.waitKey(1) & 0xFF
