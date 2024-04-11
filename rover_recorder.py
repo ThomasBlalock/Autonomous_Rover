@@ -7,6 +7,7 @@
 # for cropping images - https://learnopencv.com/cropping-an-image-using-opencv/
 
 
+import os
 import pyrealsense2.pyrealsense2 as rs
 import numpy as np
 import cv2
@@ -18,14 +19,16 @@ import random
 import time
 
 DATA_FILEPATH = '/media/usafa/data/rover_data/unprocessed'
-DATA_FILEPATH += '/test/'
+DATA_FILEPATH += '/smooth/right/'
+# DATA_FILEPATH += '/test/'
+# DATA_FILEPATH += '/off_course/'
 
 #initialize camera settings and turn on camera
 def initialize_pipeline(run):
     pipeline = rs.pipeline()
     config = rs.config()
     #record video to bag file
-    config.enable_record_to_file(f'{DATA_FILEPATH}{run}.bag')
+    config.enable_record_to_file(f'{DATA_FILEPATH}{run}.csv')
     config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
     pipeline.start(config)
     return pipeline
@@ -49,7 +52,7 @@ def get_video_data(pipeline):
 
     color_image = np.asanyarray(color_frame.get_data()) #get image from frame data
     color_image_fn = color_frame.get_frame_number()
-    cv2.imshow('color', color_image) #display image
+    # cv2.imshow('color', color_image) #display image
 
     return color_image_fn
 
@@ -96,51 +99,59 @@ def set_rc(vehicle, chnum, v):
     vehicle._channels._update_channel(str(chnum), v)
 
 def main():
-    #get starting timestamp for file naming
-    run = datetime.datetime.now()
-    #create bag file
-    bag = rosbag.Bag(f'{DATA_FILEPATH}{run}.csv', 'w')
-    #create csv and add headers
-    header = ['index', 'throttle', 'steering', 'heading']
-    with open(f'{DATA_FILEPATH}{run}.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerow(header)
-    #reopen csv for the remainder of the run
-    data_file = open(f'{DATA_FILEPATH}{run}.csv', 'a')
 
-    pipeline = initialize_pipeline(run)
     rover = connect('/dev/ttyACM0', wait_ready=True, baud=57600)
     device_channel_msg(rover)
 
-    print("Waiting for rover to be armed...")
-    while not rover.armed:
+    while True:
+        #get starting timestamp for file naming
+        run = datetime.datetime.now()
+
+        pipeline = initialize_pipeline(run)
+        
+        #create csv and add headers
+        header = ['index', 'throttle', 'steering', 'heading']
+        with open(f'{DATA_FILEPATH}{run}.csv', 'w') as f:
+            writer = csv.writer(f)
+            writer.writerow(header)
+        #reopen csv for the remainder of the run
+        data_file = open(f'{DATA_FILEPATH}{run}.csv', 'a')
+
+        if not rover.armed:
+            print("Waiting for rover to be armed...")
+            while not rover.armed:
+                time.sleep(1)
+            print("Rover armed.")
+
+        while rover.armed:
+            #get index of current frame
+            index = get_video_data(pipeline)
+            if index == None:
+                # skip the rest of the loop if no frame is available
+                continue
+
+            #get data from rover: throttle, steering, heading
+            cntrl_data = get_rover_data(rover)
+            if cntrl_data is None:
+                continue
+            #add data to csv with current frame index
+            append_data(cntrl_data, index, data_file)
+        
+        time.sleep(10)
+        #close csv file
+        data_file.close()
+        print('done')
+
+        #close bag
+        pipeline.stop()
         time.sleep(1)
-    print("Rover armed.")
+        config=None
+        pipeline=None
 
-    while rover.armed:
-        #get index of current frame
-        # Image dimentions = [480, 640, 3]
-        index = get_video_data(pipeline)
-        if index == None:
-            # skip the rest of the loop if no frame is available
-            continue
-
-        #get data from rover: throttle, steering, heading
-        cntrl_data = get_rover_data(rover)
-        if cntrl_data is None:
-            continue
-        #add data to csv with current frame index
-        append_data(cntrl_data, index, data_file)
-
-
-#exit condition
+        #exit condition
         key = cv2.waitKey(1) & 0xFF
         if key == ord('q'):
             break
-
-#close csv file
-    data_file.close()
-    print('done')
 
 
 main()

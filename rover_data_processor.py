@@ -9,20 +9,20 @@ import os
 from imutils.video import FPS
 
 #set source and destination paths
-SOURCE_PATH = '/media/usafa/data/rover_data/unprocessed' + '/test/'
-DEST_PATH = '/media/usafa/data/rover_data/processed' + '/test/'
+SOURCE_PATH = '/media/usafa/data/rover_data/unprocessed' + '/take_2/corner_fix/'
+DEST_PATH = '/media/usafa/data/rover_data/processed' + '/take_2/corner_fix/'
 #define the range of white you want
 white_L = 220
 white_H = 255
 
 #resizing parameters
-resize_W = 320
-resize_H = 240
+resize_W = 200
+resize_H = 150
 
 #cropping parameters origin is top left of image so crop_B is the full height of the image (the bottom row visually) and crop_T is the highest part of the image we want to see but the lowest numeric row of pixels we want to see.
 crop_W = int(resize_W)
 crop_B = resize_H
-crop_T = int(resize_H/3)
+crop_T = int(resize_H/5)
 
 
 def load_telem_file(path):
@@ -90,7 +90,7 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
         alignedFs = rs.align(align_to)
         fps = FPS().start()
         #loop until all frames are done
-        while playback.current_status() == rs.playback_status.playing: #TODO: While armed
+        while playback.current_status() == rs.playback_status.playing:
             try:
                 frames = pipeline.wait_for_frames(timeout_ms=5000)
                 if not frames:

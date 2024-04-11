@@ -1,0 +1,646 @@
+2024-03-22 10:36:46,688 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 10:36:57,587 [Thread-1    ] [WARNI]  Battery 1 is low 0.08V used 0 mAh
+2024-03-22 10:37:27,285 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 10:45:38,850 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 10:48:45,241 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 10:58:52,110 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 11:02:52,414 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 11:07:52,911 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 12:48:41,348 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 12:57:38,792 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 13:05:02,791 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 13:10:24,002 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-03-22 13:14:04,484 [Thread-1    ] [WARNI]  EKF2 IMU0 MAG1 ground mag anomaly, yaw re-aligned
+2024-03-22 13:14:04,488 [Thread-1    ] [WARNI]  EKF2 IMU1 MAG1 ground mag anomaly, yaw re-aligned
+2024-03-22 13:14:04,783 [Thread-1    ] [WARNI]  EKF2 IMU2 MAG1 ground mag anomaly, yaw re-aligned
+2024-03-22 13:19:05,435 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:05,590 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:05,600 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:05,610 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:06,340 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:06,560 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:06,800 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:07,060 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:07,301 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:07,561 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:07,800 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:08,061 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:08,300 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:08,561 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:08,800 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:09,061 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:09,301 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:09,561 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:09,800 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:10,061 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:10,301 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:10,561 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:10,802 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:11,061 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:11,301 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:11,561 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:11,801 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:12,061 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:12,301 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:12,560 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:12,801 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:13,061 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:13,301 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:13,561 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:13,801 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:14,061 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:14,301 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:14,561 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:14,800 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:15,061 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:15,301 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:15,561 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:15,801 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:16,061 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:16,301 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:16,561 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:16,801 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:17,061 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:17,321 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-03-22 13:19:17,561 [Thread-1    ] [ERROR]  Exception while receiving message: 
+Traceback (most recent call last):
+  File "/home/usafa/.local/lib/python3.8/site-packages/dronekit/mavlink.py", line 218, in mavlink_thread_in
+    msg = self.master.recv_msg()
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 498, in recv_msg
+    self.post_message(msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 395, in post_message
+    add_message(self.sysid_state[src_system].messages, type, msg)
+  File "/home/usafa/.local/lib/python3.8/site-packages/pymavlink/mavutil.py", line 107, in add_message
+    messages[mtype]._instances[instance_value] = msg
+TypeError: 'NoneType' object does not support item assignment
+2024-04-04 11:10:36,210 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:10:47,211 [Thread-1    ] [WARNI]  Battery 1 is low 0.11V used 0 mAh
+2024-04-04 11:11:29,002 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:11:46,302 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:12:20,004 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:12:37,804 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:12:58,304 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:13:14,005 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:13:26,805 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:13:52,505 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:14:06,806 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:14:16,717 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:14:28,507 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:14:55,007 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-04 11:15:11,718 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 11:03:28,511 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 11:05:59,405 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 11:10:10,106 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 11:15:29,807 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 11:16:56,807 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 11:18:38,107 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 11:20:14,807 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 14:54:40,336 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 14:54:49,935 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 14:57:51,711 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-08 15:00:03,574 [Thread-1    ] [WARNI]  EKF2 IMU0 MAG1 ground mag anomaly, yaw re-aligned
+2024-04-08 15:00:03,718 [Thread-1    ] [WARNI]  EKF2 IMU1 MAG1 ground mag anomaly, yaw re-aligned
+2024-04-08 15:00:22,572 [Thread-1    ] [WARNI]  EKF2 IMU2 MAG1 ground mag anomaly, yaw re-aligned
+2024-04-08 15:02:12,267 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 19:40:44,501 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 19:55:03,996 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 20:04:54,993 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 20:08:27,591 [Thread-1    ] [WARNI]  Radio Failsafe
+2024-04-09 20:08:38,491 [Thread-1    ] [WARNI]  Battery 1 is low 0.78V used 13 mAh
+2024-04-09 20:15:44,038 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 20:29:03,028 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 20:44:52,019 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 21:04:33,997 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 21:16:55,291 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 21:19:29,889 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 21:23:36,386 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 21:29:33,084 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 21:34:50,882 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 21:40:46,479 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 21:47:30,875 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-09 21:52:57,372 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:26:00,756 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:27:06,162 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:28:02,850 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:28:35,160 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:29:24,250 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:30:04,549 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:31:00,349 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:31:59,947 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:33:22,244 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:34:19,243 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:35:16,151 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:36:07,340 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:36:56,938 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:37:58,645 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:38:33,143 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:39:19,232 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:40:12,730 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:40:58,228 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:41:51,137 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:42:56,223 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:44:00,821 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:44:42,629 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:46:11,322 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:46:47,923 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:47:43,824 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:48:43,325 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:49:45,826 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:50:36,226 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:51:35,726 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:52:30,826 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:53:37,636 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:54:35,325 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:55:24,325 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:56:20,224 [Thread-1    ] [WARNI]  Warning: Arming Checks Disabled
+2024-04-10 10:56:42,723 [Thread-1    ] [WARNI]  Battery 1 is low 14.45V used 0 mAh
