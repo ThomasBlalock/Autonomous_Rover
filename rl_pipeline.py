@@ -52,21 +52,59 @@ crop_T = int(resize_H/5)
 class RLLoss(Loss):
     def __init__(self):
         super(RLLoss, self).__init__()
-        self.mtx = []
+        self.th_mtx = []
         for i in range(0, 120):
-            self.mtx.append([])
+            self.th_mtx.append([])
             for j in range(0, 200):
                 if i<120/4 or i>120-120/4:
                     pt = 0
                 else:
-                    pt = (abs(100-j)-50)/100
-                self.mtx[i].append(pt)
-        self.mtx = tf.cast(np.array(self.mtx), tf.float32)
+                    pt = (abs(100-j)-70)/100
+                self.th_mtx[i].append(pt)
+        for i in range(0, 120):
+            if i<70 or i> 110:
+                continue
+            for j in range(0, 10):
+                self.th_mtx[i][j] = 50
+        self.th_mtx = tf.cast(np.array(self.th_mtx), tf.float32)
+
+        self.cntr_mtx = []
+        for i in range(0, 120):
+            self.cntr_mtx.append([])
+            for j in range(0, 200):
+                if i<120/4 or i>120-120/4:
+                    pt = 0
+                else:
+                    pt = (abs(100-j)-70)/100
+                self.cntr_mtx[i].append(pt)
+        for i in range(0, 120):
+            if i<70 or i> 110:
+                continue
+            for j in range(0, 10):
+                self.cntr_mtx[i][j] = 50
+        self.cntr_mtx = tf.cast(np.array(self.cntr_mtx), tf.float32)
+
+        # self.st_mtx = []
+        # for i in range(0, 120):
+        #     self.st_mtx.append([])
+        #     for j in range(0, 200):
+        #         if i<15 or i>80:
+        #             pt = 0
+        #         else:
+        #             pt = j-100
+        #         self.st_mtx[i].append(pt)
+        # self.st_mtx = tf.cast(np.array(self.st_mtx), tf.float32)
 
     def call(self, y_true, y_pred):
-        print("bfbyfuwibfuyi")
         y_true = tf.cast(y_true, tf.float32)
-        return tf.reduce_sum(y_true * self.mtx)*y_pred[:, 0]
+
+        throttle_loss = tf.reduce_sum(y_true * self.th_mtx)\
+            *tf.minimum(y_pred[:, 1], 0.6)
+        # steering_loss = tf.reduce_sum(y_true * self.st_mtx)*(y_pred[:, 0]-0.5)*2
+        cntr_loss = tf.reduce_sum(y_true * self.cntr_mtx)
+            
+
+        return throttle_loss + cntr_loss
 
 def batch_generator(samples, batch_size=13,
                     normalize_labels=True,
