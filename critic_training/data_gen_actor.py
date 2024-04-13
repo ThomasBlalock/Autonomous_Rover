@@ -75,7 +75,7 @@ def get_sequence_samples(root_folder, sequence_size=13,
                             random_state=None, interval=1):
     
     # Start with a list of sequential image series.
-    samples = get_sample_series_list(folder=root_folder,
+    samples = get_sample_series_list(root_folder=root_folder,
                                      sequence_size=sequence_size,
                                      offset_start=offset_start,
                                      shuffle_series=shuffle_series,
@@ -106,33 +106,12 @@ def batch_generator(samples, batch_size=13,
             # Sanity check
             # print(f" {sample_name} data range: {offset}:{offset + batch_size}")
             images = []
-            labels = []
+
             for batch_sample in batch_samples:
                 try:
                     file_name = os.path.basename(batch_sample).replace(".png", "")
-
-                    # IMPORTANT NOTE: Be sure that these fields line up 
-                    # with your particular file naming convention!
-                    attributes = file_name.split('_')
-                    if len(attributes) < 5:
-                        f_num, throttle, steering, f_type = file_name.split('_')
-                    else:
-                        f_num, throttle, steering, heading, f_type = file_name.split('_')
-
-                    throttle = int(throttle)
-                    steering = int(steering)
-
-                    # As we stream frames from the realsense camera, we opted to
-                    # configure that stream to give us B&W images.
-                    # If this is not the case, then change the line below!
                     image = cv2.imread(batch_sample, cv2.IMREAD_GRAYSCALE)
                     images.append(image)
-
-                    if normalize_labels:
-                        steering = min_max_norm(steering, y_min, y_max)
-                        throttle = min_max_norm(throttle, y_min, y_max)
-
-                    labels.append([steering, throttle])
 
                 except Exception as e:
                     print(f" [EXCEPTION ENCOUNTERED: {e}; skipping sample {batch_sample}.] ")
@@ -140,8 +119,8 @@ def batch_generator(samples, batch_size=13,
             # Convert images into numpy arrays
             x_train = np.array(images)
 
-            # Convert labels to numpy arrays
-            y_train = np.array(labels)
+            # make y_train an array of 0
+            y_train = np.zeros(batch_size)
 
             # Here we do not hold the values of X_train and y_train,
             # instead we yield the values.

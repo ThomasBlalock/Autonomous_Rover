@@ -9,8 +9,9 @@ import os
 from imutils.video import FPS
 
 #set source and destination paths
-SOURCE_PATH = '/media/usafa/data/rover_data/unprocessed' + '/take_2/corner_fix/'
-DEST_PATH = '/media/usafa/data/rover_data/processed' + '/take_2/corner_fix/'
+SOURCE_PATH = '/media/usafa/data/rover_data/unprocessed' + '/smooth/right/'
+SOURCE_PATH2 = '/media/usafa/data/rover_data/unprocessed' + '/smooth/right/'
+DEST_PATH = '/media/usafa/data/rover_data/processed' + '/smooth/right/'
 #define the range of white you want
 white_L = 220
 white_H = 255
@@ -186,7 +187,8 @@ def process_bag_file(source_file, dest_folder=None, skip_if_exists=True):
 
 def main():
     #loop through bag files in the given directory
-    for filename in os.listdir(SOURCE_PATH):
+    filenames = os.listdir(SOURCE_PATH)
+    for filename in filenames:
         if filename.endswith(".bag"):
             source_file = os.path.join(SOURCE_PATH, filename)
             process_bag_file(source_file)
