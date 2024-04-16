@@ -1,6 +1,8 @@
 In addition to the behavioral cloning, I also coded and tried:
   - Training with a custom loss function based off of a scoring funcrtion I wrote
   - Training an actor-critic model using a modified version of that aforementioned scoring function
+None of the code or formulas in the README are exact. For example, the equation for the loss function in the code includes
+some extra terms to avoid dividing by 0 that I didn't include in this README.
 
 Custom Loss Function
 The code including the custom loss function and the training loop for that paradigm is hosted in 'rl_pipeline_custom_loss.py'.
