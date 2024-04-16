@@ -106,12 +106,14 @@ def batch_generator(samples, batch_size=13,
             # Sanity check
             # print(f" {sample_name} data range: {offset}:{offset + batch_size}")
             images = []
+            labels = []
 
             for batch_sample in batch_samples:
                 try:
                     file_name = os.path.basename(batch_sample).replace(".png", "")
                     image = cv2.imread(batch_sample, cv2.IMREAD_GRAYSCALE)
                     images.append(image)
+                    labels.append([0])
 
                 except Exception as e:
                     print(f" [EXCEPTION ENCOUNTERED: {e}; skipping sample {batch_sample}.] ")
@@ -120,7 +122,7 @@ def batch_generator(samples, batch_size=13,
             x_train = np.array(images)
 
             # make y_train an array of 0
-            y_train = np.zeros(batch_size)
+            y_train = np.array(labels)
 
             # Here we do not hold the values of X_train and y_train,
             # instead we yield the values.

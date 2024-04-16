@@ -19,6 +19,7 @@ from keras.callbacks import ModelCheckpoint
 from matplotlib import pyplot
 import keras
 import numpy as np
+from tqdm import tqdm
 
 # Configuration parameters
 DEVICE = "/GPU:0"  # Device to use for computation. Change to "/GPU:0" if GPU is available
@@ -60,6 +61,8 @@ def define_model(input_shape=(120, 200, 1)):
         Dense(2, activation=None)
     ])
 
+    # model.compile(optimizer='adam', loss='mse')
+
     return model
 
 def get_model(filename):
@@ -98,37 +101,33 @@ def train_model(amt_data=1.0):
     # Create data generators that will supply both the training and validation data during training.
     train_gen = data_gen.batch_generator(train_samples, batch_size=BATCH_SIZE, normalize_labels=True)
     val_gen = data_gen.batch_generator(val_samples, batch_size=BATCH_SIZE, normalize_labels=True)
-    
+
     with tf.device(DEVICE):
+        # Load the pre-trained critic model
+        critic_model = tf.keras.models.load_model(CRITIC_PATH)
 
-        # Load the pretrained critic model from memory
-        critic_model = keras.models.load_model(CRITIC_PATH)
+        # Freeze the weights of the critic model
+        for layer in critic_model.layers:
+            layer.trainable = False
 
-        # Freeze the weights of the pretrained critic
-        critic_model.trainable = False
+        # Build the actor model
+        actor_model = define_model()
 
-        # Define your actor model
-        shape = (120, 200, 1)  # Define your input shape
-        actor_model = define_model(input_shape=shape)
+        critic_output = critic_model([actor_model.input, actor_model.output])
 
-        # Connect the actor model to the pretrained critic
-        # Combine the actor and the pretrained critic
-        actor_input_image = actor_model.input
-        critic_output = critic_model([actor_input_image, actor_model.output])
-        model = Model(inputs=actor_input_image, outputs=critic_output)
+        model = Model(inputs=actor_model.input, outputs=critic_output)
 
-        # Compile the combined model
-        model.compile(optimizer='adam', loss='mse')
+        model.compile(optimizer=Adam(), loss='mean_squared_error')
 
         model.summary()  # Print a summary of the model architecture
-        
+            
         # Path for saving the best model checkpoints
-        filePath = MODEL_PATH + "actor_model_" + f"{MODEL_NUM:02d}_ver{TRAINING_VER:02d}" + "_epoch{epoch:04d}_val_loss{val_loss:.4f}.h5"
+        filePath = MODEL_PATH + "actor_model_" + f"{MODEL_NUM:02d}_ver{TRAINING_VER:02d}" + "_epoch{epoch:04d}.h5"
         
         # Save only the best (i.e. min validation loss) epochs
         checkpoint_best = ModelCheckpoint(filePath, monitor="val_loss", 
-                                          verbose=1, save_best_only=True, 
-                                          mode="min")
+                                            verbose=1, save_best_only=True, 
+                                            mode="min")
         
         # Train your model here.
         history = model.fit(
@@ -143,24 +142,11 @@ def train_model(amt_data=1.0):
 
     return history
 
-
-# Plot training and validation loss over epochs
-def summarize_diagnostics(histories):
-    for i in range(len(histories)):
-        # plot loss
-        pyplot.subplot(len(histories),1,1)
-        pyplot.title('Training Loss Curves')
-        pyplot.plot(histories[i].history['loss'], color='blue', label='train')
-        pyplot.plot(histories[i].history['val_loss'], color='orange', label='test')
-
-    pyplot.show()
-
 # Run the training process and display training diagnostics
 def main():
 
     # amt_data : proportion of data to use for training/testing
-    history = train_model(amt_data=0.0001)
-    summarize_diagnostics([history])
+    train_model(amt_data=1)
 
 
 # Entry point to start the training process

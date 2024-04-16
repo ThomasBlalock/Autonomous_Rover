@@ -1,6 +1,5 @@
 # Ignore files in the 'data' directory
 data/
-models/
 
 # Ignore cache files
 .cache
