@@ -9,13 +9,12 @@ In this project, I developed an autonomous RC rover using a combination of behav
 ## Table of Contents
 1. [QuickStart](#quickstart)
 2. [Introduction](#introduction)
-4. [System Architecture](#system-architecture)
-5. [Key Features](#key-features)
-6. [Methodology](#methodology)
-7. [Results](#results)
-8. [Discussion](#discussion)
-9. [Future Work](#future-work)
-10. [References](#references)
+4. [Interfacing With the Rover](#interfacing-with-the-rover)
+5. [Data Acquisition](#data-acquisition)
+6. [Data Preprocessing](#data-preprocessing)
+7. [CNN Model](#cnn-model)
+8. [Model Training](#model-training)
+9. [Results](#results)
 
 ## QuickStart
 
